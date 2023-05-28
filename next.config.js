@@ -1,6 +1,18 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
+
+let env = {};
+
+try {
+	env = require("./env");
+} catch (err) {
+	console.log(err);
 }
 
-module.exports = nextConfig
+const nextConfig = {
+	reactStrictMode: true,
+	env: {
+		...env,
+	},
+};
+
+module.exports = nextConfig;
