@@ -3,7 +3,7 @@ import { connectToDatabase } from "@/lib/db";
 import NextAuth from "next-auth";
 import CredentialProvider from "next-auth/providers/credentials";
 
-export default NextAuth({
+export const AuthOption = {
 	// object used to configure NextAuth's behaviour
 	session: {
 		strategy: "jwt",
@@ -39,4 +39,5 @@ export default NextAuth({
 			},
 		}),
 	],
-});
+};
+export default NextAuth(AuthOption);
